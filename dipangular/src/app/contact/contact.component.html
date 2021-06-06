@@ -1,0 +1,57 @@
+<div class="container">
+  <h1 class="container__title">Байланыс</h1>
+  <form class="contact-form" [formGroup]="contactForm" (submit)="submitForm()">
+    <div class="contact-form__row">
+      <mat-form-field appearance="fill">
+        <mat-label>Enter your name</mat-label>
+        <input matInput placeholder="Fill" formControlName="name" required />
+        <mat-error *ngIf="cf.name.invalid">Name is invalid</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Enter your email</mat-label>
+        <input
+          matInput
+          placeholder="pat@example.com"
+          formControlName="email"
+          required
+        />
+        <mat-error *ngIf="cf.email.invalid">Email is invalid</mat-error>
+      </mat-form-field>
+    </div>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Enter your phone number</mat-label>
+      <input
+        matInput
+        placeholder="+7 777 123 1234"
+        formControlName="phoneNumber"
+        required
+      />
+      <mat-error *ngIf="cf.phoneNumber.invalid"
+        >Phone number is invalid</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Leave your comments</mat-label>
+      <textarea
+        matInput
+        placeholder="Comments"
+        formControlName="comments"
+      ></textarea>
+      <mat-error *ngIf="cf.comments.invalid">Comments are required!</mat-error>
+    </mat-form-field>
+
+    <div class="contact-form__footer">
+      <button
+        type="submit"
+        mat-raised-button
+        color="primary"
+        [disabled]="contactForm.invalid"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,17 @@
+.login {
+  display: flex;
+  flex-direction:row;
+  padding: 200px 550px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

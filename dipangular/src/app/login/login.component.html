@@ -1,0 +1,26 @@
+<div class="login">
+  <div class="container">
+    <form [formGroup]="loginForm">
+      <h1 style="text-align: center;">Кіру</h1>
+    <mat-form-field appearance="outline">
+      <mat-label>Логин</mat-label>
+      <input type="text" matInput formControlName="userName">
+      <mat-error *ngIf="form.controls['userName'].invalid">
+        Логиніңізді енгізіңіз!
+      </mat-error>
+
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Құпиясөз</mat-label>
+      <input type="password" matInput formControlName="password">
+      <mat-error *ngIf="form.controls['password'].invalid">
+        Құпиясөзіңізді енгізіңіз!
+      </mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="login()">Кіру</button>
+  </form>
+  <div class="extra">
+    <p>Аккаунтыңыз жоқ па? <a [routerLink]="['/signup']">Аккаунт жасау</a></p>
+  </div>
+  </div>
+</div>

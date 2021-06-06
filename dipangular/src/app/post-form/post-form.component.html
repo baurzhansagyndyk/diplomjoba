@@ -1,0 +1,112 @@
+<div class="post-form-page" *ngIf="postForm">
+  <form class="post-form" [formGroup]="postForm" (ngSubmit)="submit()">
+    <div class="post-form__body">
+      <div class="input-group post-form__header">
+        <input
+          type="text"
+          class="input-group__title"
+          placeholder="Title..."
+          formControlName="title"
+          autofocus
+        />
+      </div>
+      <div class="form-group">
+        <button class="form-group__btn">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            class="crayons-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            role="img"
+            aria-labelledby="a17qec5pfhrwzk9w4kg0tp62v27qqu9t"
+          >
+            <title id="a17qec5pfhrwzk9w4kg0tp62v27qqu9t">Upload image</title>
+            <path
+              d="M20 5H4v14l9.292-9.294a1 1 0 011.414 0L20 15.01V5zM2 3.993A1 1 0 012.992 3h18.016c.548 0 .992.445.992.993v16.014a1 1 0 01-.992.993H2.992A.993.993 0 012 20.007V3.993zM8 11a2 2 0 110-4 2 2 0 010 4z"
+            ></path>
+          </svg>
+          Upload Image
+          <input
+            type="file"
+            accept="image/*"
+            class="form-group__input"
+            formControlName="image"
+            (change)="onImageChange($event)"
+          />
+        </button>
+        <p class="form-group__image-name" *ngIf="imgName">
+          {{ imgName }}
+        </p>
+      </div>
+      <div class="input-group">
+        <textarea
+          name="body_markdown"
+          class="input-group__textarea"
+          aria-expanded="false"
+          placeholder="Write your post content here..."
+          formControlName="body"
+        ></textarea>
+      </div>
+    </div>
+    <div class="post-form__foter">
+      <button class="post-form__submit" type="submit">Publish</button>
+    </div>
+  </form>
+  <div class="editor-basics">
+    <h3 class="editor-basics__title">Editor Basics</h3>
+    <ul class="editor-basics__list">
+      <li class="editor-basics__item">
+        <div class="editor-basics__right">
+          <p class="editor-basics__text"># Header</p>
+          <p class="editor-basics__text">...</p>
+          <p class="editor-basics__text">###### Header</p>
+        </div>
+        <div class="editor-basics__left">
+          <p class="editor-basics__text">H1 Header</p>
+          <p class="editor-basics__text">...</p>
+          <p class="editor-basics__text">H6 Header</p>
+        </div>
+      </li>
+      <li class="editor-basics__item">
+        <div class="editor-basics__right">
+          <p class="editor-basics__text">*italics* or _italics_</p>
+        </div>
+        <div class="editor-basics__left">
+          <p class="editor-basics__text"><em>italics</em></p>
+        </div>
+      </li>
+      <li class="editor-basics__item">
+        <div class="editor-basics__right">
+          <p class="editor-basics__text">**bold**</p>
+        </div>
+        <div class="editor-basics__left">
+          <p class="editor-basics__text"><strong>bold</strong></p>
+        </div>
+      </li>
+      <li class="editor-basics__item">
+        <div class="editor-basics__right">
+          <p class="editor-basics__text">[Link](https://...)</p>
+        </div>
+        <div class="editor-basics__left">
+          <p class="editor-basics__text">
+            <a href="https://www.google.com/" class="link" target="_blank"
+              >Link</a
+            >
+          </p>
+        </div>
+      </li>
+      <li class="editor-basics__item">
+        <div class="editor-basics__right">
+          <p class="editor-basics__text">> quoted text</p>
+        </div>
+        <div class="editor-basics__left">
+          <blockquote>quoted text</blockquote>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- <div class="preview" *ngIf="imgFile">
+  <img [src]="imgFile" style="width: 400px; height: 250px" />
+</div> -->

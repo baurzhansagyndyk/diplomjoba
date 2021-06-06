@@ -1,0 +1,110 @@
+<div class="post-detail" *ngIf="post">
+  <div class="post-detail__main">
+    <div class="post-detail__img">
+      <img [src]="post.image" alt="Post Image" />
+    </div>
+    <div class="post-detail__header">
+      <h1 class="post-detail__title">
+        {{ post.title }}
+      </h1>
+      <div class="post-detail__about">
+        <p class="post-detail__owner">{{ post.owner }}</p>
+        <span class="post-detail__date">{{
+          post.created | date: 'shortDate'
+        }}</span>
+      </div>
+    </div>
+    <markdown class="variable-binding" [data]="post.body"></markdown>
+  </div>
+  <div class="post-detail__reactions">
+    <div class="btn-group" [class.btn-group_warn]="isLiked">
+      <button
+        *ngIf="isLiked"
+        class="btn-group__btn"
+        mat-icon-button
+        mat-stroked-button
+        aria-label="Example icon-button with a heart icon"
+        color="warn"
+        (click)="like()"
+      >
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button
+        *ngIf="!isLiked"
+        class="btn-group__btn"
+        mat-icon-button
+        aria-label="Example icon-button with a heart icon"
+        (click)="like()"
+      >
+        <mat-icon>favorite_border</mat-icon>
+      </button>
+      <p class="btn-group__text">{{ post.likes }}</p>
+    </div>
+    <div class="btn-group" [class.btn-group_primary]="isFavorited">
+      <button
+        *ngIf="isFavorited"
+        class="btn-group__btn"
+        mat-icon-button
+        mat-stroked-button
+        color="primary"
+        aria-label="Example icon button with a home icon"
+        (click)="favorite()"
+      >
+        <mat-icon>bookmark</mat-icon>
+      </button>
+      <button
+        *ngIf="!isFavorited"
+        class="btn-group__btn"
+        mat-icon-button
+        aria-label="Example icon button with a home icon"
+        (click)="favorite()"
+      >
+        <mat-icon>bookmark_border</mat-icon>
+      </button>
+      <p class="btn-group__text">{{ post.favorites }}</p>
+    </div>
+    <div class="btn-group" [class.btn-group_primary]="isFavorited">
+      <a
+        *ngIf="post.is_owner"
+        class="btn-group__btn"
+        mat-icon-button
+        mat-stroked-button
+        color="primary"
+        aria-label="Example icon button with a home icon"
+        [routerLink]="['/posts', post.id, 'edit']"
+      >
+        <mat-icon>edit</mat-icon>
+      </a>
+    </div>
+    <div class="btn-group">
+      <a
+        *ngIf="post.is_owner"
+        class="btn-group__btn"
+        mat-icon-button
+        color="warn"
+        aria-label="Remove Icon"
+        (click)="removePost(post.id)"
+      >
+        <mat-icon>delete</mat-icon>
+      </a>
+    </div>
+    <div class="btn-group">
+      <a
+        class="btn-group__btn"
+        mat-icon-button
+        color="warn"
+        aria-label="Remove Icon"
+        (click)="openReport()"
+      >
+        <mat-icon>report</mat-icon>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- <section>
+  <div class="example-label">Icon</div>
+  <div class="example-button-row">
+    <div class="example-flex-container"></div>
+  </div>
+</section> -->

@@ -1,0 +1,34 @@
+.converter {
+  display: flex;
+  padding: 4rem;
+  color: #292929;
+  background-color: #ffffff;
+  & * {
+    font-size: 'Open Sans', sans-serif;
+  }
+  &__left {
+    padding: 50px 0 0;
+  }
+  &__title {
+    margin: auto;
+  }
+  &__text {
+    margin: auto;
+    white-space: pre;
+  }
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  background-color: #3f51b5;
+}
+
+.form-group {
+  margin-right: 1rem;
+  padding: 50px 0 0;  
+}

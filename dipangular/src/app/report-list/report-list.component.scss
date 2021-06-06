@@ -1,0 +1,45 @@
+.reports {
+  padding: 2rem;
+  font-family: 'Open Sans', Arial;
+  color: #222;
+  background-color: #ffffff;
+  p {
+    margin: 0;
+  }
+  &__title {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 150%;
+  }
+  &__container {
+    padding: 1rem;
+    border: 1px solid #eee;
+    box-shadow: 2px 2px 6px -2px #ccc;
+  }
+}
+
+.item {
+  margin-bottom: 1rem;
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+  }
+  &__title {
+    font-weight: 500;
+    font-size: 1.125rem;
+    line-height: 150%;
+    a {
+      font-weight: 500;
+      font-size: 18px;
+      text-decoration: none;
+    }
+  }
+  &__sender {
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 150%;
+  }
+}

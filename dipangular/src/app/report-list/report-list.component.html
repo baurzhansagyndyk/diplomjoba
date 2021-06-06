@@ -1,0 +1,19 @@
+<div class="reports" *ngIf="reports">
+  <div class="reports__title">Report List</div>
+  <div class="reports__container">
+    <div class="reports__item item" *ngFor="let report of reports">
+      <div class="item__header">
+        <p class="item__title">
+          Title:
+          <a
+            [routerLink]="['/posts', report.post_id]"
+            routerLinkActive="router-link-active"
+            >{{ report.post_title }}</a
+          >
+        </p>
+        <p class="item__sender">Sender: {{ report.owner }}</p>
+      </div>
+      <p class="item__text">{{ report.text }}</p>
+    </div>
+  </div>
+</div>

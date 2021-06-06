@@ -1,0 +1,39 @@
+<div class="signUp">
+    <div class="container">
+      <form [formGroup]="signUpForm">
+        <h1 style="text-align: center;">Аккаунт тіркеу</h1>
+      <mat-form-field appearance="outline">
+        <mat-label>Логин</mat-label>
+        <input type="text" matInput formControlName="userName">
+        <mat-error *ngIf="form.controls['userName'].invalid">
+          Логиніңізді енгізіңіз!
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>E-mail</mat-label>
+        <input type="email" matInput formControlName="email">
+        <mat-error *ngIf="form.controls['email'].invalid">
+          Эл.поштаңызды енгізіңіз!
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Құпиясөз</mat-label>
+        <input type="password" matInput formControlName="password1">
+        <mat-error *ngIf="form.controls['password1'].invalid">
+          Құпиясөзіңізді енгізіңіз!
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Құпиясөзді қайталаңыз</mat-label>
+        <input type="password" matInput formControlName="password2">
+        <mat-error *ngIf="form.controls['password2'].invalid">
+          Құпиясөзіңізді енгізіңіз!
+        </mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="signUp()">Аккаунт жасау</button>
+    </form>
+    </div>
+  </div>

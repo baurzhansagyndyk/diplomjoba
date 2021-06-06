@@ -1,0 +1,74 @@
+<body class="archive-page">
+    <div class="wrap-body">
+        <section id="container">
+            <div class="wrap-container clearfix">
+                <div id="main-content">
+                    <div class="crumbs">
+                        <ul>
+                            <li><a (click)="logout()">Шығу</a></li>
+                        </ul>
+                    </div>
+                    <section class="content-box box-2">
+                            <div class="zerogrid">
+                                <div class="row wrap-box">
+                                    <div class="col-1-4">
+                                        <div class="wrap-col">
+                                            <div class="box-item">
+                                                <div class="zoom-container">
+                                                    <img [src]="writepo" />
+                                                </div>
+                                                <div class="box-item-content">
+                                                    <h3><a (click)='posts/create()'>Жазба қалдырыңыз</a></h3>
+                                                    <p>Тарих бөлімінде өзіңіздің қызықты жазбаңызбен бөлісіңіз</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-1-4">
+                                        <div class="wrap-col">
+                                            <div class="box-item">
+                                                <div class="zoom-container">
+                                                    <img [src]="myfav" />
+                                                </div>
+                                                <div class="box-item-content">
+                                                    <h3><a (click)='favourite()'>Таңдаулы жазбалар</a></h3>
+                                                    <p>Өзіңізге ұнаған сақтаулы жазбаларды қарап шығыңыз</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-1-4">
+                                        <div class="wrap-col">
+                                            <div class="box-item">
+                                                <div class="zoom-container">
+                                                    <img [src]="mypost"/>
+                                                </div>
+                                                <div class="box-item-content">
+                                                    <h3><a (click)='myposts()'>Менің жазбаларым</a></h3>
+                                                    <p>Өзіңіз қалдырған жазбаларды қарап шығыңыз</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-1-4">
+                                        <div class="wrap-col">
+                                            <div class="box-item">
+                                                <div class="zoom-container">
+                                                    <img [src]="report" />
+                                                </div>
+                                                <div class="box-item-content">
+                                                    <h3><a (click)="reports()">Reports</a></h3>
+                                                    <p>Check reported messages</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+

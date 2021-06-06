@@ -1,0 +1,16 @@
+.signUp {
+    display: flex;
+    flex-direction:row;
+    padding: 150px 550px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: row;
+  }

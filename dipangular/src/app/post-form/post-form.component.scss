@@ -1,0 +1,126 @@
+$card-border: rgba(8, 9, 10, 0.1);
+
+.post-form-page {
+  display: flex;
+  justify-content: center;
+  padding: 4rem;
+  height: 100%;
+  background-color: #eef0f1;
+  font-family: 'Open Sans', sans-serif;
+  & * {
+    box-sizing: border-box;
+  }
+}
+
+.post-form {
+  padding: 1rem;
+  &__body {
+    padding: 2rem 4rem;
+    margin-bottom: 2rem;
+    width: 48rem;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 0 1px $card-border;
+  }
+  &__header {
+    margin-bottom: 1rem;
+  }
+  &__submit {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    background-color: #3b49df;
+    outline: none;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+}
+
+.input-group {
+  &__title {
+    padding: 0;
+    font-size: 3rem;
+    border: none;
+    outline: none;
+  }
+  &__textarea {
+    padding: 0;
+    width: 100%;
+    min-height: 16rem;
+    font-size: 1.125rem;
+    border: none;
+    outline: none;
+    resize: none;
+  }
+}
+
+.form-group {
+  display: flex;
+  margin-bottom: 1.5rem;
+  &__btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem 0.5rem 0.75rem;
+    margin-right: 0.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffffff;
+    outline: none;
+    cursor: pointer;
+    & svg {
+      margin-right: 0.5rem;
+    }
+    &:hover {
+      background-color: #eef0f1;
+    }
+  }
+  &__input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    opacity: 0;
+    cursor: pointer;
+  }
+}
+
+.editor-basics {
+  // flex-basis: 18rem;
+  min-width: 18rem;
+  &__title {
+    font-size: 1.125rem;
+    margin: 0;
+    margin-bottom: 0.5rem;
+  }
+  &__list {
+    padding: 0;
+    border-radius: 5px;
+    background-color: #f9fafa;
+    list-style: none;
+    box-shadow: 0 0 0 1px #08090a1a;
+  }
+  &__item {
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &:not(:last-child) {
+      border-bottom: 1px solid #eeeeee;
+    }
+  }
+  &__text {
+    margin: 0;
+    font-size: 0.875rem;
+  }
+  blockquote {
+    margin: 0;
+  }
+}

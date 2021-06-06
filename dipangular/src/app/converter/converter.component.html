@@ -1,0 +1,26 @@
+<div class="converter">
+  <div><h2 class="converter__title">Конвертер</h2></div>
+  <div class="form-group">
+    <div class="input-group">
+      <textarea
+        name=""
+        id=""
+        cols="60"
+        rows="20"
+        class="input-group__textarea"
+        placeholder="Type words"
+        [formControl]="data"
+      ></textarea>
+    </div>
+    <div class="btn-group">
+      <button class="btn" (click)="convert()">Convert</button>
+    </div>
+  </div>
+  <div class="converter__left">
+    <textarea
+    cols="60"
+    rows="20"
+    disabled="true"
+    placeholder="Аудармасы">{{ convertedData }}</textarea>
+  </div>
+</div>

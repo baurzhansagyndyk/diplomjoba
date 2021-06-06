@@ -1,0 +1,6 @@
+<app-post-form
+  *ngIf="title && body"
+  [title]="title"
+  [body]="body"
+  (publish)="onPublish($event)"
+></app-post-form>

@@ -1,0 +1,66 @@
+<div class="wrapper">
+  <div class="ultimate-post-kit-container">
+    <div class="header-container">
+      <h1>{{ title }}</h1>
+      <div class="input-group">
+        <mat-form-field class="example-full-width">
+          <mat-label>Жазбаны табу</mat-label>
+          <input
+            matInput
+            placeholder="Іздеу..."
+            [formControl]="searchFormControl"
+          />
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="upk-alter-grid">
+      <div class="upk-post-grid upk-post-layout-1">
+        <div class="upk-post-grid-item" *ngFor="let post of posts">
+          <div class="upk-post-grid-item-box">
+            <div class="upk-blog-image-wrapper">
+              <div class="upk-main-image">
+                <div class="gallery">
+                  <div class="ramka"><img
+                  alt="Business women having a brainstor meeting and build real customer"
+                  class="upk-blog-image"
+                  [src]="post.image"
+                /></div>
+                </div>
+              </div>
+            </div>
+            <div class="upk-blog-box-content">
+              <div>
+                <!-- <div class="upk-blog-tags">
+								<span><a href="#" rel="category tag">Corporate</a></span>
+							</div> -->
+                <h2 class="upk-blog-title-wrap">
+                  <a
+                    class="upk-blog-title"
+                    [routerLink]="['/posts', post.id]"
+                    title="Business women having a brainstor meeting and build real customer"
+                    >{{ post.title }}</a
+                  >
+                </h2>
+                <!-- <div class="upk-blog-desc-wrap">
+									<div class="upk-blog-desc">
+										<p>{{ post.body | truncate: 150 }}</p>
+									</div>
+								</div> -->
+                <div class="upk-blog-post-meta">
+                  <div class="upk-blog-author">
+                    <a class="author-name" href="#">{{ post.owner }}</a>
+                  </div>
+                  <div class="upk-blog-date">
+                    <span class="date">{{
+                      post.created | date: 'mediumDate'
+                    }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
