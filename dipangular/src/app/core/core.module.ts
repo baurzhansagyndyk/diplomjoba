@@ -5,8 +5,6 @@ import { AuthInterceptor, AuthService } from './auth.service';
 import { AuthGuard } from './authGuard';
 
 
-
-
 @NgModule({
   providers: [
     AuthService,

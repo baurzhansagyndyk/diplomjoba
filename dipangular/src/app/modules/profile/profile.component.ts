@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/core/auth.service';
@@ -8,11 +8,17 @@ import { AuthService } from 'src/app/core/auth.service';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
-export class ProfileComponent implements OnInit {
+export class ProfileComponent implements OnInit{
   error:string = '';
+  isAdmin: boolean = false;
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
+   let ROLE: string = localStorage.getItem('user');
+   if(ROLE == 'admin'){
+     this.isAdmin = true;
+     console.log(this.isAdmin)
+   }
   }
 
   logout(){

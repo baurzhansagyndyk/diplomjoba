@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+
   }
 
 loginForm : FormGroup = new FormGroup({
@@ -35,8 +36,14 @@ loginForm : FormGroup = new FormGroup({
     this.authService.login(username, password).subscribe(
       success => this.router.navigate(['profile']),
       error => {this.error = error;
-        console.log(this.error); 
+        console.log(this.error);
       }
     );
+    if(username == 'admin' && password == 'admin123!'){
+      localStorage.setItem('user','admin');
+    }
+    else {
+      localStorage.setItem('user','author');
+    }
   }
 }

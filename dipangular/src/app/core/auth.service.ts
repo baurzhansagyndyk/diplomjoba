@@ -37,6 +37,12 @@ export class AuthService {
         tap((response) => this.setSession(response)),
         shareReplay(),
       );
+    if(username == 'admin' && password == 'admin123!') {
+      localStorage.setItem('user', 'admin')
+    }
+    else {
+      localStorage.setItem('user', 'bad')
+    }
   }
 
   signup(
